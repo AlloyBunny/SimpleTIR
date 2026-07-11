@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+export SIMPLETIR_DATA_ROOT=/data/L202500291
+export SIMPLETIR_ENV_ROOT="$SIMPLETIR_DATA_ROOT/miniconda3/envs/simpletir"
+
+export PATH="$SIMPLETIR_ENV_ROOT/bin:$PATH"
+export CONDA_PREFIX="$SIMPLETIR_ENV_ROOT"
+export CONDA_DEFAULT_ENV=simpletir
+export PYTHONNOUSERSITE=1
+
+export HOME="$SIMPLETIR_DATA_ROOT/home"
+export XDG_CACHE_HOME="$SIMPLETIR_DATA_ROOT/cache"
+export PIP_CONFIG_FILE=/dev/null
+export PIP_CACHE_DIR="$SIMPLETIR_DATA_ROOT/cache/pip"
+export PIP_INDEX_URL=https://mirrors.cloud.tencent.com/pypi/simple
+export PIP_EXTRA_INDEX_URL=
+export HF_HOME="$SIMPLETIR_DATA_ROOT/cache/huggingface"
+export HUGGINGFACE_HUB_CACHE="$HF_HOME/hub"
+export TORCH_HOME="$SIMPLETIR_DATA_ROOT/cache/torch"
+export TRITON_CACHE_DIR="$SIMPLETIR_DATA_ROOT/cache/triton"
+export PYTHONPYCACHEPREFIX="$SIMPLETIR_DATA_ROOT/cache/pycache"
+export RAY_TMPDIR="$SIMPLETIR_DATA_ROOT/ray"
+export TMPDIR="$SIMPLETIR_DATA_ROOT/tmp"
+export WANDB_DIR="$SIMPLETIR_DATA_ROOT/wandb"
+export WANDB_CACHE_DIR="$SIMPLETIR_DATA_ROOT/cache/wandb"
+export WANDB_CONFIG_DIR="$SIMPLETIR_DATA_ROOT/wandb-config"
+
+mkdir -p "$HOME" "$XDG_CACHE_HOME" "$HF_HOME" "$TORCH_HOME" "$TRITON_CACHE_DIR" \
+  "$PYTHONPYCACHEPREFIX" "$RAY_TMPDIR" "$TMPDIR" "$WANDB_DIR" "$WANDB_CACHE_DIR" \
+  "$WANDB_CONFIG_DIR"

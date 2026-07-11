@@ -108,6 +108,7 @@ class MathRewardExecManager:
         self.num_examine = num_examine  # the number of batches of decoded responses to print to the console
         self.compute_score = compute_score or _default_compute_score
         self.timeout_seconds = 5
+        self.ray_get_timeout_seconds = 30
         self.max_stdout_len = 1000
 
     def __call__(self, data: DataProto):
@@ -234,7 +235,7 @@ def final_answer(result):
 
         for i, future in enumerate(futures):
             try:
-                task_result = ray.get(future, timeout=self.timeout_seconds)
+                task_result = ray.get(future, timeout=self.ray_get_timeout_seconds)
 
                 if isinstance(task_result, dict):
                     assert "extra_info" in task_result, (

@@ -6,6 +6,7 @@ dill
 flash-attn
 hydra-core
 liger-kernel
+math-verify==0.9.0
 numpy
 pandas
 peft
@@ -19,3 +20,4 @@ torchdata
 transformers
 # vllm==0.6.3.post1
 wandb
+word2number==1.1
